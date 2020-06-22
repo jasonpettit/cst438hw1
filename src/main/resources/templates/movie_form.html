@@ -4,7 +4,7 @@
   <title>Movie form</title>
 </head>
 <body>
-<h2>Hello World.</h2>
+<h2>Movie Database - Jason Pettit CST438 SU2020</h2>
 <form action="#" th:action="@{/movie}" th:object="${movie}" method="post">
   First name: <input type="text" th:field="*{firstName}" />
   <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> </span> <br />
@@ -14,8 +14,8 @@
   <span th:if="${#fields.hasErrors('movieTitle')}" th:errors="*{movieTitle}"> </span> <br />
   Movie Rating: <input type="text" th:field="*{movieRating}" />
   <span th:if="${#fields.hasErrors('movieRating')}" th:errors="*{movieRating}"> </span> <br />
-  <input type="hidden" th:field="*{time}" />
-  <span th:if="${#fields.hasErrors('time')}" th:errors="*{time}"> </span> <br />
+  <input type="hidden" th:field="*{submitTime}" />
+  <span th:if="${#fields.hasErrors('submitTime')}" th:errors="*{submitTime}"> </span> <br />
   <input type="submit" value="Submit" />
 </form>
 </body>

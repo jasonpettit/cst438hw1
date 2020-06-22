@@ -35,20 +35,20 @@ public class Movie {
   @Size(min=1, max=1)
   private String movieRating;
 
-  private String time;
+  private String submitTime;
 
   //default constructor
   public Movie(){}
 
   //constructor
   public Movie(long id, String firstName, String lastName, String movieTitle,
-      String movieRating, String time){
+      String movieRating, String submitTime){
     super();
     this.firstName = firstName;
     this.lastName = lastName;
     this.movieTitle = movieTitle;
     this.movieRating = movieRating;
-    this.time = new java.util.Date().toString();
+    this.submitTime = new java.util.Date().toString();
   }
 
   //getters and setters
@@ -92,11 +92,10 @@ public class Movie {
     this.movieRating = movieRating;
   }
 
-  public String getTime() {
-    return time;
+  public String getSubmitTime() {
+    return submitTime;
   }
 
-  public void setTime(String time) {
-    this.time = new java.util.Date().toString();
+  public void setSubmitTime(String submitTime) { this.submitTime = new java.util.Date().toString();
   }
 }
