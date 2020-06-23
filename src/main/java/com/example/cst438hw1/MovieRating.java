@@ -13,7 +13,7 @@ public class MovieRating {
 
   //looks for MovieRepository.java interface class
   @Autowired
-  MovieRepository movieRepository;
+  MovieRepository MovieRepository;
 
   /*
   localhost:8080/movie/new
@@ -30,12 +30,12 @@ public class MovieRating {
   localhost:8080/movie
   presents the user the movie_show.html page after submitting a new movie
    */
-  @PostMapping("/movie")
+  @PostMapping("/movie/new")
   public String processMovieForm(@Valid Movie movie, BindingResult result, Model model){
     if (result.hasErrors()){                              //check for errors in form
       return "movie_form";                                //if errors return the form to the user
     }
-    movieRepository.save(movie);                          //save to the database
+    MovieRepository.save(movie);                          //save to the database
     return "movie_show";                                  //no errors return movie_show.html
   }
 
@@ -45,8 +45,9 @@ public class MovieRating {
    */
   @GetMapping("/movie")
   public String getAllMovies(Model model){
-    Iterable<Movie> movie = movieRepository.findAll();    //create the list of movies
-    model.addAttribute("movies", movie);
+    //create the list of movies
+    Iterable<Movie> movies = MovieRepository.findAllByMovieRatingOrderByTitleTimeDesc();
+    model.addAttribute("movieList", movies);
     return "movie_list";                                  //return movie_list.html
   }
 

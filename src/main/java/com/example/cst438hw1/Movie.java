@@ -9,6 +9,8 @@ package com.example.cst438hw1;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -32,18 +34,23 @@ public class Movie {
   private String movieTitle;
 
   @NotNull
-  @Size(min=1, max=1)
-  private String movieRating;
+  @Max(5)
+  @Min(1)
+  private int movieRating;
 
+  @NotNull
   private String submitTime;
 
   //default constructor
-  public Movie(){}
+  public Movie(){
+    this.submitTime = new java.util.Date().toString();
+  }
 
   //constructor
   public Movie(long id, String firstName, String lastName, String movieTitle,
-      String movieRating, String submitTime){
+      int movieRating, String submitTime){
     super();
+    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.movieTitle = movieTitle;
@@ -84,11 +91,11 @@ public class Movie {
     this.movieTitle = movieTitle;
   }
 
-  public String getMovieRating() {
+  public int getMovieRating() {
     return movieRating;
   }
 
-  public void setMovieRating(String movieRating) {
+  public void setMovieRating(int movieRating) {
     this.movieRating = movieRating;
   }
 

@@ -5,7 +5,7 @@
 </head>
 <body>
 <h2>Movie Database - Jason Pettit CST438 SU2020</h2>
-<form action="#" th:action="@{/movie}" th:object="${movie}" method="post">
+<form action="#" th:action="@{/movie/new}" th:object="${movie}" method="post">
   First name: <input type="text" th:field="*{firstName}" />
   <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> </span> <br />
   Last name: <input type="text" th:field="*{lastName}" />

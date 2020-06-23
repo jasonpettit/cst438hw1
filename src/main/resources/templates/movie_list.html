@@ -14,7 +14,7 @@
     <th>Movie Rating</th>
     <th>Time Created</th>
   </tr>
-  <tr th:each="movie : ${movies}">
+  <tr th:each="movie : ${movieList}">
     <td th:text="${movie.firstName}"></td>
     <td th:text="${movie.lastName}"></td>
     <td th:text="${movie.movieTitle}"></td>
