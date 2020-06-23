@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface MovieRepository extends CrudRepository<Movie, Long> {
-
-  
+  @Query("select m from Movie m order by m.movieTitle, m.submitTime")
+  List<Movie> findAllByMovieTitleOrderByMovieTitleSubmitTimeDesc();
 }

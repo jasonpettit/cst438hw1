@@ -1,6 +1,6 @@
 /*
 * Movie.java
-* Movie object has: firstName, lastName, movieTitle, movieRating
+* Movie object has: firstName, lastName, movieTitle, movieRating, submitTime
 * provides the object to movie_form.html and movie_show.html
 */
 
@@ -96,6 +96,5 @@ public class Movie {
     return submitTime;
   }
 
-  public void setSubmitTime(String submitTime) { this.submitTime = new java.util.Date().toString();
-  }
+  public void setSubmitTime(String submitTime) { this.submitTime = new java.util.Date().toString(); }
 }
