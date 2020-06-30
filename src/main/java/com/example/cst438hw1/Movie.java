@@ -59,49 +59,21 @@ public class Movie {
   }
 
   //getters and setters
-  public long getId() {
-    return id;
-  }
+  public long getId() { return id; }
+  public void setId(long id) { this.id = id; }
 
-  public void setId(long id) {
-    this.id = id;
-  }
+  public String getFirstName() { return firstName; }
+  public void setFirstName(String firstName) { this.firstName = firstName; }
 
-  public String getFirstName() {
-    return firstName;
-  }
+  public String getLastName() { return lastName; }
+  public void setLastName(String lastName) { this.lastName = lastName; }
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
+  public String getMovieTitle() { return movieTitle; }
+  public void setMovieTitle(String movieTitle) { this.movieTitle = movieTitle; }
 
-  public String getLastName() {
-    return lastName;
-  }
+  public int getMovieRating() { return movieRating; }
+  public void setMovieRating(int movieRating) { this.movieRating = movieRating; }
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getMovieTitle() {
-    return movieTitle;
-  }
-
-  public void setMovieTitle(String movieTitle) {
-    this.movieTitle = movieTitle;
-  }
-
-  public int getMovieRating() {
-    return movieRating;
-  }
-
-  public void setMovieRating(int movieRating) {
-    this.movieRating = movieRating;
-  }
-
-  public String getSubmitTime() {
-    return submitTime;
-  }
-
+  public String getSubmitTime() { return submitTime; }
   public void setSubmitTime(String submitTime) { this.submitTime = new java.util.Date().toString(); }
 }

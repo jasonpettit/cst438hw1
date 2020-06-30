@@ -21,9 +21,9 @@ public class MovieRating {
    */
   @GetMapping("/movie/new")
   public String createMovie(Model model){
-    Movie movie = new Movie();                              //new blank movie object
-    model.addAttribute("movie", movie);       //key value = movie
-    return "movie_form";                                   //movie_form.html is returned
+    Movie movie = new Movie();                            //new blank movie object
+    model.addAttribute("movie", movie);                   //key value = movie
+    return "movie_form";                                  //movie_form.html is returned
   }
 
   /*
